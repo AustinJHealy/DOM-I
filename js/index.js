@@ -48,8 +48,18 @@ let navAnchors = Array.from(document.querySelectorAll("nav a"));
 for (let i=0; i<navAnchors.length; i++) {
     navAnchors[i].textContent = siteContent.nav[`nav-item-${i+1}`]};
 
-let headerH1 = document.querySelector(".cta-text h1");
-headerH1.innerHTML =`DOM<br> Is<br> Awesome`;
+let ctaH1 = document.querySelector(".cta-text h1");
+ctaH1.innerHTML =`DOM<br> Is<br> Awesome`;
+
+let ctaButton = document.querySelector(`.cta-text button`);
+ctaButton.textContent= "Get Started";
+
+let ctaImg = document.getElementById(`cta-img`);
+ctaImg.setAttribute(`src`, siteContent.cta[`img-src`]);
+
+
+
+
 
 
 

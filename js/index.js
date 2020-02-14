@@ -65,6 +65,9 @@ mainTextContentHeaders[0].textContent = siteContent["main-content"]["features-h4
 mainTextContent[0].textContent = siteContent["main-content"]["features-content"];
 mainTextContentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
 mainTextContent[1].textContent = siteContent["main-content"]["about-content"];
+
+
+
 mainTextContentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
 mainTextContent[2].textContent = siteContent["main-content"]["services-content"];
 mainTextContentHeaders[3].textContent = siteContent["main-content"]["product-h4"];

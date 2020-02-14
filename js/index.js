@@ -90,6 +90,10 @@ contactContent[1].textContent = siteContent[`contact`][`phone`];
 
 contactContent[2].textContent = siteContent[`contact`][`email`];
 
+const footerContent = document.querySelector(`footer p`);
+
+footerContent.textContent = siteContent[`footer`][`copyright`];
+
 
  
 

@@ -43,24 +43,34 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
  
-let navAnchors = Array.from(document.querySelectorAll("nav a"));
+const navAnchors = Array.from(document.querySelectorAll("nav a"));
   
 for (let i=0; i<navAnchors.length; i++) {
     navAnchors[i].textContent = siteContent.nav[`nav-item-${i+1}`]};
 
-let ctaH1 = document.querySelector(".cta-text h1");
+const ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.innerHTML =`DOM<br> Is<br> Awesome`;
 
-let ctaButton = document.querySelector(`.cta-text button`);
+const ctaButton = document.querySelector(`.cta-text button`);
 ctaButton.textContent= "Get Started";
 
-let ctaImg = document.getElementById(`cta-img`);
+const ctaImg = document.getElementById(`cta-img`);
 ctaImg.setAttribute(`src`, siteContent.cta[`img-src`]);
 
+const mainTextContentHeaders = Array.from(document.querySelectorAll(`.text-content h4`));
 
+const mainTextContent = Array.from(document.querySelectorAll(`.text-content p`));
 
-
-
+mainTextContentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+mainTextContent[0].textContent = siteContent["main-content"]["features-content"];
+mainTextContentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+mainTextContent[1].textContent = siteContent["main-content"]["about-content"];
+mainTextContentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+mainTextContent[2].textContent = siteContent["main-content"]["services-content"];
+mainTextContentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+mainTextContent[3].textContent = siteContent["main-content"]["product-content"];
+mainTextContentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+mainTextContent[4].textContent = siteContent["main-content"]["vision-content"];
 
 
 

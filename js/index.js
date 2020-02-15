@@ -57,38 +57,30 @@ ctaButton.textContent= "Get Started";
 const ctaImg = document.getElementById(`cta-img`);
 ctaImg.setAttribute(`src`, siteContent.cta[`img-src`]);
 
-const mainTextContentHeaders = Array.from(document.querySelectorAll(`.text-content h4`));
+const htmlTextContent = Array.from(document.querySelectorAll(`.text-content > h4, .text-content > p`));
+const siteTextContent = Object.values(siteContent[`main-content`]);
 
-const mainTextContent = Array.from(document.querySelectorAll(`.text-content p`));
 
-mainTextContentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
-mainTextContent[0].textContent = siteContent["main-content"]["features-content"];
-
-mainTextContentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
-mainTextContent[1].textContent = siteContent["main-content"]["about-content"];
+for ( let i=0; i < 4; i++) {
+  htmlTextContent[i].textContent = siteTextContent[i];
+}
 
 const middleImg = document.getElementById(`middle-img`);
 middleImg.src = siteContent[`main-content`][`middle-img-src`];
 
-mainTextContentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
-mainTextContent[2].textContent = siteContent["main-content"]["services-content"];
-
-mainTextContentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
-mainTextContent[3].textContent = siteContent["main-content"]["product-content"];
-
-mainTextContentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
-mainTextContent[4].textContent = siteContent["main-content"]["vision-content"];
+for ( let i=4; i < htmlTextContent.length; i++) {
+  htmlTextContent[i].textContent = siteTextContent[i+1];
+}
 
 const contactHeader = document.querySelector(`.contact h4`);
 contactHeader.textContent = siteContent[`contact`][`contact-h4`];
 
 const contactContent = Array.from(document.querySelectorAll(".contact p"));
+const siteContact = Object.values(siteContent.contact);
 
-contactContent[0].textContent = siteContent[`contact`][`address`];
-
-contactContent[1].textContent = siteContent[`contact`][`phone`];
-
-contactContent[2].textContent = siteContent[`contact`][`email`];
+for (let i=0; i < siteContact.length-1; i++) {
+contactContent[i].textContent = siteContact[i+1];
+}
 
 const footerContent = document.querySelector(`footer p`);
 

@@ -46,7 +46,9 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 const navAnchors = Array.from(document.querySelectorAll("nav a"));
   
 for (let i=0; i<navAnchors.length; i++) {
-    navAnchors[i].textContent = siteContent.nav[`nav-item-${i+1}`]};
+    navAnchors[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+    navAnchors[i].style.color = "green";
+    };
 
 const ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.innerHTML =`DOM<br> Is<br> Awesome`;

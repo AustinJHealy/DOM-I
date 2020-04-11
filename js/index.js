@@ -39,4 +39,70 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+const nav = document.querySelector("nav");
+const navAnchors = Array.from(document.querySelectorAll("nav a"));
+
+for (let i=0; i<navAnchors.length; i++) {
+    navAnchors[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+    navAnchors[i].style.color = "green";
+    };
+  
+
+const newLinkAppend = document.createElement('a');
+newLinkAppend.textContent= "Append" ;
+nav.append(newLinkAppend);
+
+const newLinkPrepend = document.createElement('a');
+newLinkPrepend.textContent = "Prepend";
+nav.prepend(newLinkPrepend);
+
+
+
+const ctaH1 = document.querySelector(".cta-text h1");
+ctaH1.innerHTML =`DOM<br> Is<br> Awesome`;
+
+const ctaButton = document.querySelector(`.cta-text button`);
+ctaButton.textContent= "Get Started";
+
+const ctaImg = document.getElementById(`cta-img`);
+ctaImg.setAttribute(`src`, siteContent.cta[`img-src`]);
+
+const htmlTextContent = Array.from(document.querySelectorAll(`.text-content > h4, .text-content > p`));
+const siteTextContent = Object.values(siteContent[`main-content`]);
+
+
+for ( let i=0; i < 4; i++) {
+  htmlTextContent[i].textContent = siteTextContent[i];
+}
+
+const middleImg = document.getElementById(`middle-img`);
+middleImg.src = siteContent[`main-content`][`middle-img-src`];
+
+for ( let i=4; i < htmlTextContent.length; i++) {
+  htmlTextContent[i].textContent = siteTextContent[i+1];
+}
+
+const contactHeader = document.querySelector(`.contact h4`);
+contactHeader.textContent = siteContent[`contact`][`contact-h4`];
+
+const contactContent = Array.from(document.querySelectorAll(".contact p"));
+const siteContact = Object.values(siteContent.contact);
+
+for (let i=0; i < siteContact.length-1; i++) {
+contactContent[i].textContent = siteContact[i+1];
+}
+
+const footerContent = document.querySelector(`footer p`);
+
+footerContent.textContent = siteContent[`footer`][`copyright`];
+
+
+ 
+
+
+
+
+

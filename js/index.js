@@ -42,9 +42,19 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
- 
+const nav = document.querySelector("nav");
+
 const navAnchors = Array.from(document.querySelectorAll("nav a"));
   
+
+const newLinkAppend = document.createElement('a');
+newLinkAppend.textContent= "Append" ;
+nav.append(newLinkAppend);
+
+const newLinkPrepend = document.createElement('a');
+newLinkPrepend.textContent = "Prepend";
+nav.prepend(newLinkPrepend);
+
 for (let i=0; i<navAnchors.length; i++) {
     navAnchors[i].textContent = siteContent.nav[`nav-item-${i+1}`];
     navAnchors[i].style.color = "green";
